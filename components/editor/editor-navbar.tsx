@@ -2,32 +2,20 @@
 
 import { PanelLeftOpen, PanelLeftClose } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { UserButton } from "@clerk/nextjs";
 
 interface EditorNavbarProps {
-  isSidebarOpen: boolean;
-  onToggleSidebar: () => void;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export function EditorNavbar({
-  isSidebarOpen,
-  onToggleSidebar,
-}: EditorNavbarProps) {
+export function EditorNavbar({ isOpen, onToggle }: EditorNavbarProps) {
   return (
-    <nav
-      className={cn(
-        "flex h-12 shrink-0 items-center border-b border-surface-border bg-surface px-3"
-      )}
-    >
+    <header className="h-12 shrink-0 flex items-center justify-between px-3 bg-bg-surface border-b border-border-default">
       {/* Left section */}
       <div className="flex items-center">
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          onClick={onToggleSidebar}
-          aria-label={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
-        >
-          {isSidebarOpen ? (
+        <Button variant="ghost" size="icon-sm" onClick={onToggle}>
+          {isOpen ? (
             <PanelLeftClose className="size-5" />
           ) : (
             <PanelLeftOpen className="size-5" />
@@ -39,7 +27,10 @@ export function EditorNavbar({
       <div className="flex flex-1 items-center justify-center" />
 
       {/* Right section */}
-      <div className="flex items-center" />
-    </nav>
+      <div className="flex items-center">
+        <UserButton />
+      </div>
+    </header>
   );
 }
+

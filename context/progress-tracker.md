@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Feature 02 — Editor Chrome (Navbar + Sidebar Shell)
+- Feature 03 — Auth Integration
 
 ## Current Goal
 
-- Next logical step: Check next feature spec.
+- Implement Clerk auth per 03-auth.md spec
 
 ## Completed
 
@@ -23,7 +23,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## In Progress
 
-- None.
+- `03-auth` — Clerk auth integration: ClerkProvider setup, auth pages, proxy.ts route protection, UserButton in editor navbar.
 
 ## Next Up
 
