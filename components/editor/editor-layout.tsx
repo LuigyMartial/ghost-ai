@@ -14,13 +14,16 @@ export function EditorLayout({ children }: EditorLayoutProps) {
   return (
     <div className="flex h-screen flex-col bg-base">
       <EditorNavbar
-        isSidebarOpen={isSidebarOpen}
-        onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
+        isOpen={isSidebarOpen}
+        onToggle={() => setIsSidebarOpen((prev) => !prev)}
       />
 
       <ProjectSidebar
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
+        onNewProject={() => {}}
+        onRename={() => {}}
+        onDelete={() => {}}
       />
 
       {/* Main canvas area */}
